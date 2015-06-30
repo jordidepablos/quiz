@@ -21,6 +21,11 @@ router.get('/quizes/:quizId(\\d+)', quizController.show);
 // GET /quizes/:id/answer
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
+// GET /quizes/new
+router.get('/quizes/new', quizController.new);
+
+// POST /quizes/create
+router.post('/quizes/create', quizController.create);
 
 /*
 // GET pregunta
