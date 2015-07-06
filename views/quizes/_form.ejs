@@ -1,20 +1,20 @@
 <p>
-    <label for="preg" class="rem">Pregunta</label>
-    <input id="preg"
-           name="quiz[pregunta]"
-           type="text"
-           placeholder="<%= (quiz.pregunta !== "Pregunta") ? "" : quiz.pregunta %>"
-           value="<%= (quiz.pregunta === "Pregunta") ? "" : quiz.pregunta %>" />
+	<label for="preg" class="rem">Pregunta:</label>
+	<input type="text"
+	       id="preg"
+	       name="quiz[pregunta]"
+	       placeholder="<%=(quiz.pregunta !== 'Pregunta') ? '' : quiz.pregunta%>"
+	       value="<%=(quiz.pregunta === 'Pregunta') ? '' : quiz.pregunta%>" />
 </p>
 <p>
-    <label for="resp" class="rem">Respuesta</label>
-    <input id="resp"
-           name="quiz[respuesta]"
-           type="text"
-           placeholder="<%= (quiz.respuesta !== "Respuesta") ? "" : quiz.respuesta %>"
-           value="<%= (quiz.respuesta === "Respuesta") ? "" : quiz.respuesta %>" />
+	<label for="resp" class="rem">Respuesta:</label>
+	<input type="text"
+	       id="resp"
+	       name="quiz[respuesta]"
+	       placeholder="<%=(quiz.respuesta !== 'Respuesta') ? '' : quiz.respuesta%>"
+	       value="<%=(quiz.respuesta === 'Respuesta') ? '' : quiz.respuesta%>" />
 </p>
 <p>
-    <a href="/quizes"><button type="button">Cancelar</button></a>
-    <input type="submit" value="Salvar" />
+	<a href="/quizes"><button type="button">Cancelar</button></a>
+	<input type="submit" value="Salvar"/>
 </p>

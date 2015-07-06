@@ -4,14 +4,28 @@
 
 1. Pasos realizados en los víedeos del módulo 8
 
-  1. Crear nueva ruta en el archivo *routes/index.js*
+  1. Vídeo 1 - Creación de preguntas
 
-  2. Añadir al controlador *controllers/quizController.js* el nuevo método new
+    1. Crear nueva ruta en el archivo *routes/index.js*
 
-  3. Crear la vista *views/quizes/new.ejs*
+    2. Añadir al controlador *controllers/quizController.js* el nuevo método new
 
-  4. Crear la vista *views/quizes/_from.ejs* para tanto la creación de preguntas como la edición de las mismas.
+    3. Crear la vista *views/quizes/new.ejs*
 
-  5. Modificar el archivo *app.js*
+    4. Crear la vista *views/quizes/_from.ejs* para tanto la creación de preguntas como la edición de las mismas.
 
-  6. Modificar *views/quizes/indes.js* para añadir el botón de crear preguntas.
+    5. Modificar el archivo *app.js*
+
+    6. Modificar *views/quizes/indes.js* para añadir el botón de crear preguntas.
+
+  2. Vídeo 2 - Validación de entradas
+
+    1. Modificar el archivo *models/quiz.js* para añadir validación al modelo.
+
+    2. Modificar el archivo *controllers/quizController.js* para hacer uso de la validación del modelo.
+
+    3. Modificar el archivo *views/layout.ejs* para que se muestren los errores detectados en la validación.
+
+    4. Modificar el archivo *public/stylesheets/style.css* para que los errores se muestren en un color rojizo
+
+    5. Modificar todas las llamadas a render para añadir el nuevo parámetro, vacío o no.
