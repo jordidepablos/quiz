@@ -26,6 +26,23 @@
 
     3. Modificar el archivo *views/layout.ejs* para que se muestren los errores detectados en la validación.
 
-    4. Modificar el archivo *public/stylesheets/style.css* para que los errores se muestren en un color rojizo
+    4. Modificar el archivo *public/stylesheets/style.css* para que los errores se muestren en un color rojizo.
 
     5. Modificar todas las llamadas a render para añadir el nuevo parámetro, vacío o no.
+
+  3. Vídeo 3 - Editar preguntas
+
+    1. Crear las nuevas rutas `GET /quizes/:quizId/edit` y `PUT /quizes/:quizId` en el archivo *routes/index.js*.
+
+    2. Modificar el archivo *controllers/quizController.js* para añadir los métodos *edit* y *update*.
+
+    3. Crear la nueva vista *views/quizes/edit.ejs*.
+
+    4. Instalar el middelware *method-override* usando el comando:
+      ```
+      npm install --save method-override
+      ```
+
+    5. Modificar el archivo *app.js* para añadir el uso de *method-override*.
+
+    6. Modificar el archivo *views/quizes/index.ejs* para añadir el nuevo botón a cada pregunta mostrada.
