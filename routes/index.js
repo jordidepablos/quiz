@@ -30,6 +30,9 @@ router.get('/quizes/:quizId(\\d+)/edit', quizController.edit);
 // PUT /quizes/:id
 router.put('/quizes/:quizId(\\d+)', quizController.update);
 
+// DELETE /quizes:id
+router.delete('/quizes/:quizId(\\d+)', quizController.delete);
+
 // GET /quizes/new
 router.get('/quizes/new', quizController.new);
 

@@ -8,7 +8,7 @@
 
     1. Crear nueva ruta en el archivo *routes/index.js*
 
-    2. Añadir al controlador *controllers/quizController.js* el nuevo método new
+    2. Añadir al controlador *controllers/quiz_controller.js* el nuevo método new
 
     3. Crear la vista *views/quizes/new.ejs*
 
@@ -22,7 +22,7 @@
 
     1. Modificar el archivo *models/quiz.js* para añadir validación al modelo.
 
-    2. Modificar el archivo *controllers/quizController.js* para hacer uso de la validación del modelo.
+    2. Modificar el archivo *controllers/quiz_controller.js* para hacer uso de la validación del modelo.
 
     3. Modificar el archivo *views/layout.ejs* para que se muestren los errores detectados en la validación.
 
@@ -34,7 +34,7 @@
 
     1. Crear las nuevas rutas `GET /quizes/:quizId/edit` y `PUT /quizes/:quizId` en el archivo *routes/index.js*.
 
-    2. Modificar el archivo *controllers/quizController.js* para añadir los métodos *edit* y *update*.
+    2. Modificar el archivo *controllers/quiz_controller.js* para añadir los métodos *edit* y *update*.
 
     3. Crear la nueva vista *views/quizes/edit.ejs*.
 
@@ -46,3 +46,11 @@
     5. Modificar el archivo *app.js* para añadir el uso de *method-override*.
 
     6. Modificar el archivo *views/quizes/index.ejs* para añadir el nuevo botón a cada pregunta mostrada.
+
+  4. Vídeo 4 - Borrar preguntas
+
+    1. Modificar la vista *views/quizes/index.js* para añdir el bótón de eliminación para cada una de las preguntas.
+
+    2. Modificar el archivo *routes/index.js* para añadir la nueva ruta `DELETE /quizes/:quizId`.
+
+    3. Modificar el archivo *controllers/quiz_controller.js* para añadir el método *delete*.
