@@ -15,6 +15,15 @@
 	       value="<%=(quiz.respuesta === 'Respuesta') ? '' : quiz.respuesta%>" />
 </p>
 <p>
+	<label for="tem" class="rem">Tema:</label>
+	<select id="tem"
+	        name="quiz[TemaId]">
+	        <% for (var t in temas) { %>
+		<option value="<%= temas[t].id %>" <%= ((temas[t].id === quiz.TemaId) ? 'selected' : '') %> ><%= temas[t].nombre%></option>
+	        <% } %>
+	</select>
+</p>
+<p>
 	<a href="/quizes"><button type="button">Cancelar</button></a>
 	<input type="submit" value="Salvar"/>
 </p>

@@ -67,4 +67,12 @@
       2. Establecer la relación entre los modelos *tema* y *quiz* de forma que a un quiz le corresponda un único tema y que a un tema le correspondan varios quizzes.
 
       3. Modificar la parte en la que se crea e inicializa la base de datos. Ahora se tiene que crear e inicailizar en primer lugar los temas y después se debe crear e inicializar los quiz.
-      
+
+    3. Añadir el tema en el listado de quizes, en la creación y en la edición.
+
+      1. Editar el archivo *controllers/quiz_controller.js* para modificar las consultas en las que se obitienen los quizzes para que se retorne el tema que les corresponde.
+
+      2. Editar la vista *views/quizes/index.ejs* para incluir el tema en el listado de quizzes.
+
+      3. Modificar *views/quizes/_form.ejs* para añadir el campo de selección de tema, esto afecta tanto a la creación de un nuevo quiz como a la modificación de uno existente.
+

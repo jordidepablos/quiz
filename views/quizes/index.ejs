@@ -3,11 +3,18 @@
     <input type="submit" value="Buscar" />
 </form>
 <table>
+    <tr>
+        <th>Pregunta</th>
+        <th>Tema</th>
+        <th><!--editar--></th>
+        <th><!--borrar--></th>
+    </tr>
 <%
     for (var i = 0; i < quizes.length; i++) {
 %>
     <tr>
         <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+        <td><a href="/temas/<%= quizes[i].Tema.id %>/quizes"><%= quizes[i].Tema.nombre %></a></td>
         <td><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></td>
         <td>
         	<form method="post" action="quizes/<%= quizes[i].id %>?_method=DELETE">

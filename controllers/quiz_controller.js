@@ -2,7 +2,13 @@ var models = require('../models/models.js');
 
 // Autoload - factoriza el código si ruta incluye :quizId
 exports.load = function(req, res, next, quizId) {
-    models.Quiz.findById(quizId).then( function(quiz) {
+    models.Quiz.findById(quizId, {
+        include: [
+            {
+                model: models.Tema
+            }
+        ]
+    }).then( function(quiz) {
         if (quiz) {
             req.quiz = quiz;
             next();
@@ -12,20 +18,23 @@ exports.load = function(req, res, next, quizId) {
 };
 
 // GET /quizes
-exports.index = function(req, res) {
-    var options = {};
+exports.index = function(req, res, next) {
+    console.log('***** GET /quizes');
+    var options = {
+        include: [
+            {
+                model: models.Tema
+            }
+        ]
+    };
     if (req.query.search) {
-        options = {
-            where: {
+        options.where = {
                 pregunta: {
                     like: '%' + req.query.search.replace(/\s+/g, '%') + '%'
                 }
-            },
-            order: [['pregunta', 'ASC']]
-        };
+            };
+        options.order = [['pregunta', 'ASC']];
     }
-    console.log('search: ' + req.query.search);
-    console.log('query options: ' + JSON.stringify(options));
     models.Quiz.findAll(options).then( function(quizes) {
         res.render('quizes/index', {
             quizes: quizes,
@@ -55,19 +64,22 @@ exports.answer = function (req, res) {
 };
 
 // GET /qiuzes/new
-exports.new = function (req, res) {
+exports.new = function (req, res, next) {
     var quiz = models.Quiz.build({
         pregunta: 'Pregunta',
         respuesta: 'Respuesta'
     });
-    res.render('quizes/new', {
-        quiz: quiz,
-        errors: []
-    });
+    models.Tema.findAll().then(function(temas) {
+            res.render('quizes/new', {
+            quiz: quiz,
+            temas: temas,
+            errors: []
+        });
+    }).catch(function(error) {next(error);});
 };
 
 // POST /quizes/create
-exports.create = function (req, res) {
+exports.create = function (req, res, next) {
     var quiz = models.Quiz.build( req.body.quiz );
 
     quiz.validate().then(function(err) {
@@ -78,23 +90,30 @@ exports.create = function (req, res) {
             });
         else
             // Guarda en DB los campos pregunta y respuesta de quiz
-            quiz.save({fileds: ["pregunta", "respuesta"]}).then( function() {
-                res.redirect('/quizes');
-            }); // Redirección HTTP (URL relativo) lista de preguntas
+            quiz.save({fileds: ["pregunta", "respuesta", "TemaId"]}).then( function() {
+                res.redirect('/quizes');  // Redirección HTTP (URL relativo) lista de preguntas
+            }).catch(function(error) {next(error);});
     });
 };
 
 // GET /quizes/:quizId/edit
-exports.edit = function (req, res) {
+exports.edit = function (req, res, next) {
     var quiz = req.quiz;
 
-    res.render('quizes/edit', {quiz: quiz, errors: []});
+    models.Tema.findAll().then(function(temas) {
+        res.render('quizes/edit', {
+            quiz: quiz,
+            temas: temas,
+            errors: []
+        });
+    }).catch(function(error) {next(error);});
 };
 
 // PUT /quizes/:quizId
-exports.update = function(req, res) {
+exports.update = function(req, res, next) {
     req.quiz.pregunta = req.body.quiz.pregunta;
     req.quiz.respuesta = req.body.quiz.respuesta;
+    req.quiz.TemaId = req.body.quiz.TemaId;
 
     req.quiz.validate().then(function(err) {
         if (err)
@@ -104,15 +123,15 @@ exports.update = function(req, res) {
             });
         else
             req.quiz.save({ // save: guarda campos pregunta y respuesta en DB
-                fields: ['pregunta', 'respuesta']
+                fields: ['pregunta', 'respuesta', 'TemaId']
             }).then(function() {
                 res.redirect('/quizes');    // Redirección HTTP a lista de preguntas (url relativo)
-            });
+            }).catch(function(error) {next(error);});
     });
 }
 
 // DELETE /quizes/:quizId
-exports.delete = function(req, res) {
+exports.delete = function(req, res, next) {
     req.quiz.destroy().then(function() {
         res.redirect('/quizes');
     }).catch(function (error){
