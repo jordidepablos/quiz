@@ -94,9 +94,9 @@
 
   6. Creación de nuevos temas
 
-    1. Modificar el router *routes/index.js* para añadir la captura de las rutas `GET /temas/new` y `PUT /temas/create`.
+    1. Modificar el router *routes/index.js* para añadir la captura de las rutas `GET /temas/new` y `PUTPOST /temas/create`.
 
-    2. Modificar el controlador *controllers/tema_controller.js* para implementar los controladores de las peticiones `GET /temas/new` y `PUT /temas/create`.
+    2. Modificar el controlador *controllers/tema_controller.js* para implementar los controladores de las peticiones `GET /temas/new` y `POST /temas/create`.
 
     3. Crear las vistas *views/temas/new.ejs* y *views/temas/_form.ejs*.
 
@@ -106,5 +106,12 @@
 
     2. Modificar el controlador *controllers/tema_controller.js* para implementar el control de la petición `DELETE /temas/:temaId`. Hay que tener en cuenta que no se puede permitir borrar un tema que esté asignado a una o más quizzes para evitar inconsistencias en la base de datos.
 
+  8. Modificacion de temas existentes
+
+    1. Modificar el router *routes/index.js* para añadir la captura de las rutas `GET /temas/newedit` y `PUT /temas/create:temaId`.
+
+    2. Modificar el controlador *controllers/tema_controller.js* para implementar los controladores de las peticiones `GET /temas/edit` y `PUT /temas/:temaId`.
+
+    3. Crear la vista *views/temas/edit.ejs* que hace uso de la vista *views/temas/_form.ejs*.
 
 

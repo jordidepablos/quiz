@@ -20,6 +20,9 @@ router.get('/', function(req, res) {
 // TEMAS
 // **************************************************************************
 
+// Autoload de comandos con :temaId
+router.param('temaId', temaController.load);
+
 // GET /temas
 router.get('/temas', temaController.index);
 
@@ -34,6 +37,12 @@ router.post('/temas/create', temaController.create);
 
 // DELETE /temas/:temaId
 router.delete('/temas/:temaId(\\d+)', temaController.delete);
+
+// GET /temas/edit
+router.get('/temas/:temaId(\\d+)/edit', temaController.edit);
+
+// PUT /temas/:temaId
+router.put('/temas/:temaId(\\d+)', temaController.update);
 
 // **************************************************************************
 // QUIZ
