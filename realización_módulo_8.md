@@ -85,5 +85,13 @@
     3. Añadir la nueva vista *views/temas/index.js* que mostrará la lista de temas.
 
     4. Modificar el archivo *views/layout.js* para incluir el link a la lista de temas.
+
+  5. Mostrar lista de preguntas que corresponden a un tema al seleccionar el tema.
+
+    1. Modificar el router *routes/index.js* para añadir la captura de la ruta `GET /temas/:temaId/quizes`.
+
+    2. Modificar el controlador *controllers/tema_controller.js* para implementar el controlador de la petición  `GET /temas/:temaId/quizes`
+
     
+
 

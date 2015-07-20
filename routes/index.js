@@ -23,6 +23,9 @@ router.get('/', function(req, res) {
 // GET /temas
 router.get('/temas', temaController.index);
 
+// GET /temas/:temaId/quizes
+router.get('/temas/:temaId(\\d+)/quizes', temaController.quizes);
+
 
 // **************************************************************************
 // QUIZ
