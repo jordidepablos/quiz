@@ -55,24 +55,35 @@
 
     3. Modificar el archivo *controllers/quiz_controller.js* para añadir el método *delete*.
 
-  5. Ejercicio P2P
+2. Ejercicio P2P
 
-    1. Añadir el nuevo modelo *models/tema.js* para los temas.
-      He pensado que los temas deberían estar guardados en base de datos y que se pudieran añadir nuevos, editar y eliminar. Para ello es necesario tener un nuevo modelo.
+  1. Añadir el nuevo modelo *models/tema.js* para los temas.
+    He pensado que los temas deberían estar guardados en base de datos y que se pudieran añadir nuevos, editar y eliminar. Para ello es necesario tener un nuevo modelo.
 
-    2. Modificar el archivo *models/models.js*
+  2. Modificar el archivo *models/models.js*
 
-      1. Importar la definición de la tabla *Tema*.
+    1. Importar la definición de la tabla *Tema*.
 
-      2. Establecer la relación entre los modelos *tema* y *quiz* de forma que a un quiz le corresponda un único tema y que a un tema le correspondan varios quizzes.
+    2. Establecer la relación entre los modelos *tema* y *quiz* de forma que a un quiz le corresponda un único tema y que a un tema le correspondan varios quizzes.
 
-      3. Modificar la parte en la que se crea e inicializa la base de datos. Ahora se tiene que crear e inicailizar en primer lugar los temas y después se debe crear e inicializar los quiz.
+    3. Modificar la parte en la que se crea e inicializa la base de datos. Ahora se tiene que crear e inicailizar en primer lugar los temas y después se debe crear e inicializar los quiz.
 
-    3. Añadir el tema en el listado de quizes, en la creación y en la edición.
+  3. Añadir el tema en el listado de quizes, en la creación y en la edición.
 
-      1. Editar el archivo *controllers/quiz_controller.js* para modificar las consultas en las que se obitienen los quizzes para que se retorne el tema que les corresponde.
+    1. Editar el archivo *controllers/quiz_controller.js* para modificar las consultas en las que se obitienen los quizzes para que se retorne el tema que les corresponde.
 
-      2. Editar la vista *views/quizes/index.ejs* para incluir el tema en el listado de quizzes.
+    2. Editar la vista *views/quizes/index.ejs* para incluir el tema en el listado de quizzes.
 
-      3. Modificar *views/quizes/_form.ejs* para añadir el campo de selección de tema, esto afecta tanto a la creación de un nuevo quiz como a la modificación de uno existente.
+    3. Modificar *views/quizes/_form.ejs* para añadir el campo de selección de tema, esto afecta tanto a la creación de un nuevo quiz como a la modificación de uno existente.
+
+  4. Mostrar la lista de temas 
+    
+    1. Crear el controlador *controllers/tema_controller.js* para atender las peticiones relacionadas con los temas.
+
+    2. Modificar el router *routes/index.js* para incorporar el controlador *tema_controller.js* y para definir las rutas de temas.
+
+    3. Añadir la nueva vista *views/temas/index.js* que mostrará la lista de temas.
+
+    4. Modificar el archivo *views/layout.js* para incluir el link a la lista de temas.
+    
 

@@ -4,6 +4,9 @@ var router = express.Router();
 // importar quiz_controller
 var quizController = require('../controllers/quiz_controller');
 
+// importar tema_controller
+var temaController = require('../controllers/tema_controller');
+
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index', {
@@ -11,6 +14,19 @@ router.get('/', function(req, res) {
         errors: []
     });
 });
+
+
+// **************************************************************************
+// TEMAS
+// **************************************************************************
+
+// GET /temas
+router.get('/temas', temaController.index);
+
+
+// **************************************************************************
+// QUIZ
+// **************************************************************************
 
 // Autoload de comandos con :quizId
 router.param('quizId', quizController.load);
