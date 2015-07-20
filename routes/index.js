@@ -32,6 +32,9 @@ router.get('/temas/new', temaController.new);
 // PUT /temas/create
 router.post('/temas/create', temaController.create);
 
+// DELETE /temas/:temaId
+router.delete('/temas/:temaId(\\d+)', temaController.delete);
+
 // **************************************************************************
 // QUIZ
 // **************************************************************************

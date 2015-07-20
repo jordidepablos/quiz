@@ -98,6 +98,13 @@
 
     2. Modificar el controlador *controllers/tema_controller.js* para implementar los controladores de las peticiones `GET /temas/new` y `PUT /temas/create`.
 
+    3. Crear las vistas *views/temas/new.ejs* y *views/temas/_form.ejs*.
+
+  7. Eliminación de temas
+
+    1. Modificar el router *routes/index.js* para añadir la captura de las rutas `DELETE /temas/:temaId`.
+
+    2. Modificar el controlador *controllers/tema_controller.js* para implementar el control de la petición `DELETE /temas/:temaId`. Hay que tener en cuenta que no se puede permitir borrar un tema que esté asignado a una o más quizzes para evitar inconsistencias en la base de datos.
 
 
 
