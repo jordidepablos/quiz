@@ -54,3 +54,17 @@
     2. Modificar el archivo *routes/index.js* para añadir la nueva ruta `DELETE /quizes/:quizId`.
 
     3. Modificar el archivo *controllers/quiz_controller.js* para añadir el método *delete*.
+
+  5. Ejercicio P2P
+
+    1. Añadir el nuevo modelo *models/tema.js* para los temas.
+      He pensado que los temas deberían estar guardados en base de datos y que se pudieran añadir nuevos, editar y eliminar. Para ello es necesario tener un nuevo modelo.
+
+    2. Modificar el archivo *models/models.js*
+
+      1. Importar la definición de la tabla *Tema*.
+
+      2. Establecer la relación entre los modelos *tema* y *quiz* de forma que a un quiz le corresponda un único tema y que a un tema le correspondan varios quizzes.
+
+      3. Modificar la parte en la que se crea e inicializa la base de datos. Ahora se tiene que crear e inicailizar en primer lugar los temas y después se debe crear e inicializar los quiz.
+      

@@ -23,4 +23,4 @@ Una vez realizada, se deberá guardar una nueva versión (commit) con esta funci
 
 **Entrega en MiriadaX**
 
-Subir un fichero de texto que contenga el URL donde ha desplegfado su práctica en Heroku, y el URL a la página de GitHub que aloja este desarrollo.
+Subir un fichero de texto que contenga el URL donde ha desplegado su práctica en Heroku, y el URL a la página de GitHub que aloja este desarrollo.
