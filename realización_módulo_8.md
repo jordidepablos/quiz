@@ -90,8 +90,14 @@
 
     1. Modificar el router *routes/index.js* para añadir la captura de la ruta `GET /temas/:temaId/quizes`.
 
-    2. Modificar el controlador *controllers/tema_controller.js* para implementar el controlador de la petición  `GET /temas/:temaId/quizes`
+    2. Modificar el controlador *controllers/tema_controller.js* para implementar el controlador de la petición `GET /temas/:temaId/quizes`.
 
-    
+  6. Creación de nuevos temas
+
+    1. Modificar el router *routes/index.js* para añadir la captura de las rutas `GET /temas/new` y `PUT /temas/create`.
+
+    2. Modificar el controlador *controllers/tema_controller.js* para implementar los controladores de las peticiones `GET /temas/new` y `PUT /temas/create`.
+
+
 
 

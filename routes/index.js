@@ -26,6 +26,11 @@ router.get('/temas', temaController.index);
 // GET /temas/:temaId/quizes
 router.get('/temas/:temaId(\\d+)/quizes', temaController.quizes);
 
+// GET /temas/new
+router.get('/temas/new', temaController.new);
+
+// PUT /temas/create
+router.post('/temas/create', temaController.create);
 
 // **************************************************************************
 // QUIZ
