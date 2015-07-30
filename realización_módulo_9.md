@@ -26,3 +26,10 @@
 
             2. Añadir en *routes/index.js* ruta `POST /quizes/:quizId/comments`.
 
+        4. Modificar vista *views/quizes/show* para incluir comentarios y botón de crear comentario.
+
+            1. Modificar `autoload` del controlador *controllers/quiz_controller.js* para que cargue también los comentarios del quiz.
+
+            2. Modificar vista *views/quizes/show* para incluir comentarios y botón de crearlos.
+
+        5. Guardar versión (commit) git y subir a Heroku.

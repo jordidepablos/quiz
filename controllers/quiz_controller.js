@@ -5,7 +5,8 @@ exports.load = function(req, res, next, quizId) {
     models.Quiz.findById(quizId, {
         include: [
             {
-                model: models.Tema
+                model: models.Tema,
+                model: models.Comment
             }
         ]
     }).then( function(quiz) {
