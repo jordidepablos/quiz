@@ -31,13 +31,21 @@ var Quiz = sequelize.import(path.join(__dirname, 'quiz'));
 // Importar la definición de la tabla Tema en tema.js
 var Tema = sequelize.import(path.join(__dirname, 'tema'));
 
+// Importar la definición de la tabla Comments en comments.js
+var Comment = sequelize.import(path.join(__dirname, 'comment'));
+
+
 // Establecer la relación entre los modelos Tema y Quiz
 Quiz.belongsTo(Tema);
 Tema.hasMany(Quiz);
 
+// Establecer la relación entre los comentatios y las preguntas
+Comment.belongsTo(Quiz);
+Quiz.hasMany(Comment);
+
 exports.Quiz = Quiz;
 exports.Tema = Tema;
-
+exports.Comment = Comment;
 // sequelize.sync() crea e inicializa tabla de preguntas en DB
 sequelize.sync().then(function() {
     // Si no hay contenidos en la tabla temas se cargan los valores iniciales
