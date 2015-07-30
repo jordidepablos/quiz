@@ -7,6 +7,10 @@ var quizController = require('../controllers/quiz_controller');
 // importar tema_controller
 var temaController = require('../controllers/tema_controller');
 
+// importar comment_controller
+var commentController = require('../controllers/comment_controller');
+
+
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index', {
@@ -77,13 +81,21 @@ router.post('/quizes/create', quizController.create);
 
 
 
-/*
-// GET pregunta
-router.get('/quizes/question', quizController.question);
+// **************************************************************************
+// COMMNETS
+// **************************************************************************
 
-// GET respuestas
-router.get('/quizes/answer', quizController.answer);
-*/
+// GET /quizes/:quizId/comments/new
+router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new);
+
+// POST /quizes/:quizId/comments
+router.post('/quizes/:quizId(\\d+)/comments', commentController.create);
+
+
+
+// **************************************************************************
+// AUTHOR
+// **************************************************************************
 
 // GET /author
 router.get('/author', function(req, res) {
