@@ -10,6 +10,9 @@ var temaController = require('../controllers/tema_controller');
 // importar comment_controller
 var commentController = require('../controllers/comment_controller');
 
+// importar session_controller
+var sessionController = require('../controllers/session_controller');
+
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -19,6 +22,19 @@ router.get('/', function(req, res) {
     });
 });
 
+
+// **************************************************************************
+// SESSION
+// **************************************************************************
+
+// GET /login
+router.get('/login', sessionController.new);		// formulario login
+
+// GET /login
+router.post('/login', sessionController.create);	// crear sesión
+
+// GET /logout
+router.get('/logout', sessionController.destroy);	// destruir sesión
 
 // **************************************************************************
 // TEMAS

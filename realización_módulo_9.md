@@ -46,3 +46,12 @@
 
 			3. Guardar path de re-dirección después de login
 
+		2. Añadir 3 rutas de gestión de sesión en *routes/index.js*
+
+			- Cargar formulario de login: `GET /login`
+			
+			- Crear sesión: `POST /login`
+
+			- Destruir sesión: `GET /logout` (funciona, pero debería ser `DELETE`)
+
+		
