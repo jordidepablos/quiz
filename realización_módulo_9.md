@@ -1,6 +1,8 @@
-#Módulo 9
-##Ejercicio P2P Obligatorio
-###Realización del Ejercicio
+# Módulo 9
+
+## Ejercicio P2P Obligatorio
+
+### Realización del Ejercicio
 
 1. Pasos realizados en los víedeos del módulo 9
 
@@ -9,7 +11,7 @@
         1. Añadir nueva tabla en la BD para guardar los comentarios a las preguntas.
 
             1. Añadir la definición de la tabla de comentarios en el archivo *models/comments.js*.
-      
+            
             2. Importar la nueva tabla en el archivo *models/model.js* y definir la relación entre las tablas quiz y comment.
 
         2. Añadir formulario de crear comentarios: `GET /quizes/:quizId/comments/new`.
@@ -33,3 +35,14 @@
             2. Modificar vista *views/quizes/show* para incluir comentarios y botón de crearlos.
 
         5. Guardar versión (commit) git y subir a Heroku.
+
+	2. Video 2 - Autenticación y sesión
+
+		1. Importar, instalar y configurar middleware de gestión de sesiones
+
+			1. Importar e instalar middleware express-session en *app.js* y en *package.json*
+
+			2. Hacer visible la sesión en las vistas quizes y comment
+
+			3. Guardar path de re-dirección después de login
+
