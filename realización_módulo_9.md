@@ -62,3 +62,4 @@
 
 			3. Añadir acción destroy para a ruta `GET /logout` para destruir la sesión
 
+		4. Crear controlador de usuarios: *controllers/user_controller.js*
