@@ -65,3 +65,7 @@
 		4. Crear controlador de usuarios: *controllers/user_controller.js*
 
 		5. Añadir botón `login/logout` en *views/layout.ejs*
+
+		6. Añadir vista de login *views/sessions/new.ejs*
+
+		7. Guardar versión (commit) git y subir a Heroku

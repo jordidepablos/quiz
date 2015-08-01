@@ -16,6 +16,10 @@ footer, input {
     font-size: large;
 }
 
+.right {
+    float: none;
+}
+
 .author-content {
     width: 90%;
     margin: 0 auto;

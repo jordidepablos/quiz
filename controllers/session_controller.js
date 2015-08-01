@@ -27,12 +27,12 @@ exports.create = function(req, res) {
 			username: user.username
 		};
 
-		req.redirect(req.session.redir.toString()); // redirección al path anterior a login
+		res.redirect(req.session.redir.toString()); // redirección al path anterior a login
 	});
 };
 
 // GET /logout
 exports.destroy = function(req, res) {
 	delete req.session.user;
-	req.redirect(req.session.redir.toString()); // redirección al path anterior a logout
+	res.redirect(req.session.redir.toString()); // redirección al path anterior a logout
 };
