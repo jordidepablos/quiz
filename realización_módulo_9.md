@@ -54,4 +54,11 @@
 
 			- Destruir sesión: `GET /logout` (funciona, pero debería ser `DELETE`)
 
-		
+		3. Crear controlador de sesión *controllers/session_controller.js*
+
+			1. Añadir acción new para la ruta `GET /login` para cargar formulario de login
+
+			2. Añadir acción create para la ruta `POST /login` para crear la sesión de usuario
+
+			3. Añadir acción destroy para a ruta `GET /logout` para destruir la sesión
+
