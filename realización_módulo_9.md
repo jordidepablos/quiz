@@ -74,3 +74,5 @@
 
 		1. Añadir MW de autorización en *routes/index.js* a rutas de creación, edición y borrado
 
+		2. Crear un middleware de autorización en *controllers/seesion_controller.js*
+
