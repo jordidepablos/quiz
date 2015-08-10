@@ -80,3 +80,6 @@
 
 		4. Añadir MW de autorización en *routes/index.js* a rutas de creación, edición y borrado de temas
 
+		5. Modificar vista *views/temas/index.js* para quitar botones a usuarios anónimos
+
+		6. Guardar versión (commit) git y subir a Heroku
