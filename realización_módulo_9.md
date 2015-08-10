@@ -88,4 +88,10 @@
 
 		1. Añadir campo de publicado en tabla *models/comments.js* de la DB
 
-		
+		2. Instalar middleware de autoload y nueva ruta en *routes/index.js*
+
+			1. Instalar middleware de Autoload de comentarios en *routes/index.js*
+
+			2. Añadir en *routes/index.js* ruta `GET /quizes/:quizId/comments/:id/publish` para autorizar comentario
+
+

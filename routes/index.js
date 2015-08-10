@@ -23,6 +23,18 @@ router.get('/', function(req, res) {
 });
 
 
+
+// **************************************************************************
+// AUTOLOAD
+// **************************************************************************
+
+// Autoload de comandos con :temaId
+router.param('temaId', temaController.load);
+
+// Autoload de comandos con :commentId
+router.param('commentId', commentController.load);
+
+
 // **************************************************************************
 // SESSION
 // **************************************************************************
@@ -39,9 +51,6 @@ router.get('/logout', sessionController.destroy);	// destruir sesión
 // **************************************************************************
 // TEMAS
 // **************************************************************************
-
-// Autoload de comandos con :temaId
-router.param('temaId', temaController.load);
 
 // GET /temas
 router.get('/temas', temaController.index);
@@ -107,6 +116,8 @@ router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new);
 // POST /quizes/:quizId/comments
 router.post('/quizes/:quizId(\\d+)/comments', commentController.create);
 
+// GET /quizes/:quizId/comments/:commentId/publish
+router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish', sessionController.loginRequired, commentController.publish);
 
 
 // **************************************************************************
