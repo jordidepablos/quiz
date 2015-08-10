@@ -94,4 +94,9 @@
 
 			2. Añadir en *routes/index.js* ruta `GET /quizes/:quizId/comments/:id/publish` para autorizar comentario
 
+		3. Añadir autoload y acción publish en *controllers/comment_controller.js*
+
+			1. Añadir método de Autoload de comentarios en controlador
+
+			2. Añadir acción publish para publicar comentarios una vez autorizados
 
