@@ -76,3 +76,5 @@
 
 		2. Crear un middleware de autorización en *controllers/seesion_controller.js*
 
+		3. Modificar vista *views/quizes/index.js* para quitar botones a usuarios anónimos
+

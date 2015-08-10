@@ -15,17 +15,21 @@
     <tr>
         <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
         <td><a href="/temas/<%= quizes[i].Tema.id %>/quizes"><%= quizes[i].Tema.nombre %></a></td>
+        <% if (session.user) { %>
         <td><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></td>
         <td>
         	<form method="post" action="quizes/<%= quizes[i].id %>?_method=DELETE">
         		<button type="submit" onclick="return confirm('Borrar: <%= quizes[i].pregunta %>');">borrar</button>
         	</form>
        	</td>
+        <% } %>
     </tr>
 <%
     }
 %>
 </table>
 <p>
+    <% if (session.user) { %>
 	<a href="/quizes/new"><button type="button">Crear pregunta</button></a>
+    <% } %>
 </p>
