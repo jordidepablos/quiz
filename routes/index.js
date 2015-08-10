@@ -50,19 +50,19 @@ router.get('/temas', temaController.index);
 router.get('/temas/:temaId(\\d+)/quizes', temaController.quizes);
 
 // GET /temas/new
-router.get('/temas/new', temaController.new);
+router.get('/temas/new', sessionController.loginRequired, temaController.new);
 
 // PUT /temas/create
-router.post('/temas/create', temaController.create);
+router.post('/temas/create', sessionController.loginRequired, temaController.create);
 
 // DELETE /temas/:temaId
-router.delete('/temas/:temaId(\\d+)', temaController.delete);
+router.delete('/temas/:temaId(\\d+)', sessionController.loginRequired, temaController.delete);
 
 // GET /temas/edit
-router.get('/temas/:temaId(\\d+)/edit', temaController.edit);
+router.get('/temas/:temaId(\\d+)/edit', sessionController.loginRequired, temaController.edit);
 
 // PUT /temas/:temaId
-router.put('/temas/:temaId(\\d+)', temaController.update);
+router.put('/temas/:temaId(\\d+)', sessionController.loginRequired, temaController.update);
 
 // **************************************************************************
 // QUIZ
@@ -81,19 +81,19 @@ router.get('/quizes/:quizId(\\d+)', quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
 // GET /quizes/:id/edit
-router.get('/quizes/:quizId(\\d+)/edit', session_controller.loginRequired, quizController.edit);
+router.get('/quizes/:quizId(\\d+)/edit', sessionController.loginRequired, quizController.edit);
 
 // PUT /quizes/:id
-router.put('/quizes/:quizId(\\d+)', session_controller.loginRequired, quizController.update);
+router.put('/quizes/:quizId(\\d+)', sessionController.loginRequired, quizController.update);
 
 // DELETE /quizes:id
-router.delete('/quizes/:quizId(\\d+)', session_controller.loginRequired, quizController.delete);
+router.delete('/quizes/:quizId(\\d+)', sessionController.loginRequired, quizController.delete);
 
 // GET /quizes/new
-router.get('/quizes/new', session_controller.loginRequired, quizController.new);
+router.get('/quizes/new', sessionController.loginRequired, quizController.new);
 
 // POST /quizes/create
-router.post('/quizes/create', session_controller.loginRequired, quizController.create);
+router.post('/quizes/create', sessionController.loginRequired, quizController.create);
 
 
 

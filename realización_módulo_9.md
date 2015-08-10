@@ -78,3 +78,5 @@
 
 		3. Modificar vista *views/quizes/index.js* para quitar botones a usuarios anónimos
 
+		4. Añadir MW de autorización en *routes/index.js* a rutas de creación, edición y borrado de temas
+
