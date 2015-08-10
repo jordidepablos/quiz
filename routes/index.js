@@ -81,19 +81,19 @@ router.get('/quizes/:quizId(\\d+)', quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
 // GET /quizes/:id/edit
-router.get('/quizes/:quizId(\\d+)/edit', quizController.edit);
+router.get('/quizes/:quizId(\\d+)/edit', session_controller.loginRequired, quizController.edit);
 
 // PUT /quizes/:id
-router.put('/quizes/:quizId(\\d+)', quizController.update);
+router.put('/quizes/:quizId(\\d+)', session_controller.loginRequired, quizController.update);
 
 // DELETE /quizes:id
-router.delete('/quizes/:quizId(\\d+)', quizController.delete);
+router.delete('/quizes/:quizId(\\d+)', session_controller.loginRequired, quizController.delete);
 
 // GET /quizes/new
-router.get('/quizes/new', quizController.new);
+router.get('/quizes/new', session_controller.loginRequired, quizController.new);
 
 // POST /quizes/create
-router.post('/quizes/create', quizController.create);
+router.post('/quizes/create', session_controller.loginRequired, quizController.create);
 
 
 

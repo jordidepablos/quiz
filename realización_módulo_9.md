@@ -69,3 +69,8 @@
 		6. Añadir vista de login *views/sessions/new.ejs*
 
 		7. Guardar versión (commit) git y subir a Heroku
+
+	3. Video 3 - Autorización
+
+		1. Añadir MW de autorización en *routes/index.js* a rutas de creación, edición y borrado
+
