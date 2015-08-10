@@ -100,3 +100,7 @@
 
 			2. Añadir acción publish para publicar comentarios una vez autorizados
 
+		4. Modificar *views/quizzes/:quizId/show* para mostrar solo comentarios autorizados
+
+		5. Guardar versión (commit) git y subir a Heroku
+
