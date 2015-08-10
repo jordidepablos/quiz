@@ -83,3 +83,9 @@
 		5. Modificar vista *views/temas/index.js* para quitar botones a usuarios anónimos
 
 		6. Guardar versión (commit) git y subir a Heroku
+
+	4. Video 4 - Moderación de Comentarios
+
+		1. Añadir campo de publicado en tabla *models/comments.js* de la DB
+
+		
