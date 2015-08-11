@@ -104,3 +104,14 @@
 
 		5. Guardar versión (commit) git y subir a Heroku
 
+	5. Video 5 - HTTPS - HTTP Seguro
+
+		1. Crear e instalar claves y certificados digitales para acceso seguro HTTPS
+
+			1. Crear script de creación e instalación de certificados digitales
+
+			2. Crear e instalar certificados
+
+		2. Añadir acceso por HTTPS al arrancar el servidor de node.js en *bin/www*
+
+		3. Guardar versión (commit) git y subir a Heroku
