@@ -33,8 +33,8 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Helpers dinámicos:
+// Login y Logout
 app.use(function(req, res, next){
-
     // guardar el path enb session.redir para después de login
     if (!req.path.match(/\/login|\/logout/)) {
         req.session.redir = req.path;
@@ -43,6 +43,33 @@ app.use(function(req, res, next){
     // Hacer visible req.session en las vistas
     res.locals.session = req.session;
     next();
+});
+
+// Autologout
+app.use(function(req, res, next) {
+    // Sólo haremos autoLogout cuando haya un usuario logueado
+    if (req.session && req.session.user) {
+        var lastAccess = req.session.lastAccess || new Date().getTime();
+        var minDate = new Date().getTime() - (2 * 60 * 1000); // restamos al la hora actual 2 minutos
+
+        console.log('\n\n----------------------------------------------------> lastAccess: ' + lastAccess);
+        console.log('---------------------------------------------------->    minDate: ' + minDate + '\n\n');
+        if (lastAccess > minDate) {
+            console.log('\n\n----------------------------------------------------> Ok\n\n');
+            req.session.lastAccess = lastAccess;
+            next();
+        }
+        else {
+            console.log('\n\n----------------------------------------------------> Logout\n\n');
+            delete req.session.user;
+            delete req.session.lastAccess;
+            res.redirect('/login');
+        }
+    }
+    else {
+        console.log('\n\n----------------------------------------------------> No logueado\n\n');
+        next();
+    }
 });
 
 app.use('/', routes);

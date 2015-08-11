@@ -1,4 +1,4 @@
-#Módulo 7
+#Módulo 8
 ##Ejercicio P2P Obligatorio
 ###Explicación de la tarea
 
