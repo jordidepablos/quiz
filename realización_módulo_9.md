@@ -131,3 +131,5 @@
 		2. Crear el controlador *controllers/statistics_controller.js* que se encargará de realizar el cálculo de las estadísticas y de renderizar la vista.
 
 		3. Crear la vista *views/statistics/show.ejs*.
+
+		4. Editar *views/layout.ejs* para añadir el link que nos muestre las estadísticas.
