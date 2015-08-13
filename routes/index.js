@@ -13,6 +13,9 @@ var commentController = require('../controllers/comment_controller');
 // importar session_controller
 var sessionController = require('../controllers/session_controller');
 
+// importar statictics_controller
+var statisticsController = require('../controllers/statistics_controller');
+
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -121,6 +124,14 @@ router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish', sessionCon
 
 
 // **************************************************************************
+// STATISTICS
+// **************************************************************************
+
+// GET /quizes/statistics
+router.get('/quizes/statistics', statisticsController.show);
+
+
+// **************************************************************************
 // AUTHOR
 // **************************************************************************
 
@@ -130,5 +141,6 @@ router.get('/author', function(req, res) {
         errors: []
     });
 });
+
 
 module.exports = router;

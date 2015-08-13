@@ -123,3 +123,7 @@
 		Editar el archivo *app.js* para añadir el middleware de autoLogout.
 
 		En primer lugar se comprueba que el usuario esté logueado, si no lo está se seja pasar al siguiente middelware sin hacer nada más. Cuando se trata de un acceso de un usuario logueado, se obtiene de la sesion la hora del último acceso y se compara con la hora actual menos 2 minutos, si la hora de último acceso es mayor se deja continuar la ejecución de los siguientes middelwares, en caso contrario se destruye la session de usuario y la fecha del último acceso y se redirige a la pantalla de login.
+
+	2. Añadir una página de estadisticas
+
+		1. Añadir la ruta `GET /quizes/statistics` en el archivo *routes/index.js*. Añadir también el requerimiento del controlador statisticsController, que se ubicará en *controllers/statistics_controller.js*.
