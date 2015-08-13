@@ -64,3 +64,15 @@ nav span {
 .jordi {
     background-image: url(/images/IMG_0508.JPG);
 }
+
+div.statistics {
+    text-align: left;
+}
+
+table.statistics > tbody > tr > td:first-of-type {
+    text-align: right;
+}
+
+table.statistics > tbody > tr > td:last-of-type {
+    padding-left: 10px;
+}
