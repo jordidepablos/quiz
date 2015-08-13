@@ -127,3 +127,5 @@
 	2. Añadir una página de estadisticas
 
 		1. Añadir la ruta `GET /quizes/statistics` en el archivo *routes/index.js*. Añadir también el requerimiento del controlador statisticsController, que se ubicará en *controllers/statistics_controller.js*.
+
+		2. Crear el controlador *controllers/statistics_controller.js* que se encargará de realizar el cálculo de las estadísticas y de renderizar la vista.
