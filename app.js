@@ -56,7 +56,7 @@ app.use(function(req, res, next) {
         console.log('---------------------------------------------------->    minDate: ' + minDate + '\n\n');
         if (lastAccess > minDate) {
             console.log('\n\n----------------------------------------------------> Ok\n\n');
-            req.session.lastAccess = lastAccess;
+            req.session.lastAccess = new Date().getTime();
             next();
         }
         else {
